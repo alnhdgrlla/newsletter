@@ -4,6 +4,7 @@ module Types
     field :sign_in_manager, mutation: Mutations::SignInManager
     field :create_spam, mutation: Mutations::CreateSpam
     field :create_template, mutation: Mutations::CreateTemplate
+    field :create_subscriber, mutation: Mutations::CreateSubscriber
     field :delete_spam, mutation: Mutations::DeleteSpam
     field :delete_temp, mutation: Mutations::DeleteTemplate
     field :update_spam, mutation: Mutations::UpdateSpam

@@ -4,7 +4,7 @@ module Mutations
 
     type Types::TemplateType
 
-    def resolve(spam_id:)
+    def resolve(temp_id:)
 
       c_u = context[:current_user] 
       return GraphQL::ExecutionError.new("You must log in to create a spam") if !c_u
@@ -14,7 +14,7 @@ module Mutations
 
       return GraphQL::ExecutionError.new("You have no right to delete the spam") if !temp.manager.id == c_u.id
 
-      temp.destory
+      temp.destroy
       temp
     end
   end
