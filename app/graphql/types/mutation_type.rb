@@ -5,6 +5,8 @@ module Types
     field :create_spam, mutation: Mutations::CreateSpam
     field :create_template, mutation: Mutations::CreateTemplate
     field :delete_spam, mutation: Mutations::DeleteSpam
+    field :delete_temp, mutation: Mutations::DeleteTemplate
     field :update_spam, mutation: Mutations::UpdateSpam
+    field :update_template, mutation: Mutations::UpdateTemplate
   end
 end

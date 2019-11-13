@@ -5,7 +5,11 @@ module Mutations
     type Types::TemplateType
 
     def resolve(inputs: )
-      Template.create!(inputs.to_h)
+      c_u = context[:current_user] 
+      return GraphQL::ExecutionError.new("You must log in to create a spam") if !c_u
+      
+      temp = Template.create!(inputs.to_h)
+      temp
     end
   end
 end
