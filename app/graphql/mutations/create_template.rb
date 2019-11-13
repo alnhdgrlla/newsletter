@@ -4,9 +4,8 @@ module Mutations
 
     type Types::TemplateType
 
-    def resolve(inputs:)
-      c_u = context[:current_user]
-      c_u.templates.create!(inputs.to_h)
+    def resolve(inputs: )
+      Template.create!(inputs.to_h)
     end
   end
 end

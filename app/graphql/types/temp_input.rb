@@ -7,6 +7,6 @@ module Types
     argument :temp_content, String, required: false
     argument :content, String, required: false
     argument :sub_name, String, required: false
-    # argument :spam_id ID, required: true
+    argument :spam_id, ID, required: true
   end
 end
