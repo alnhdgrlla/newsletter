@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_13_060548) do
+ActiveRecord::Schema.define(version: 2019_11_14_014111) do
 
   create_table "managers", force: :cascade do |t|
     t.string "name"
@@ -38,13 +38,12 @@ ActiveRecord::Schema.define(version: 2019_11_13_060548) do
   end
 
   create_table "templates", force: :cascade do |t|
-    t.string "temp_name"
     t.text "content"
-    t.string "sub_name"
-    t.string "temp_content"
     t.integer "spam_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "title"
+    t.string "name"
     t.index ["spam_id"], name: "index_templates_on_spam_id"
   end
 
