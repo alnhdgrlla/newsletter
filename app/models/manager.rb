@@ -1,7 +1,7 @@
 class Manager < ApplicationRecord
   has_many :spams, dependent: :destroy
-  has_many :templates, through: :spam
-  has_many :subscribers, through: :spam
+  has_many :templates, through: :spams
+  has_many :subscribers, through: :spams
 
   has_secure_password
 
