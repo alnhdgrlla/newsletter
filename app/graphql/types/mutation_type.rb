@@ -7,6 +7,7 @@ module Types
     field :create_subscriber, mutation: Mutations::CreateSubscriber
     field :delete_spam, mutation: Mutations::DeleteSpam
     field :delete_temp, mutation: Mutations::DeleteTemplate
+    field :delete_subscriber, mutation: Mutations::DeleteSubscriber
     field :update_spam, mutation: Mutations::UpdateSpam
     field :update_template, mutation: Mutations::UpdateTemplate
   end
