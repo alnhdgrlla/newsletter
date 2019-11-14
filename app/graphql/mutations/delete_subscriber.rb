@@ -11,7 +11,6 @@ module Mutations
 
       sub = Subscriber.find_by(id:subscriber_id)
       return GraphQL::ExecutionError.new("No subscriber exists with that ID") if !sub
-      # byebug
       return GraphQL::ExecutionError.new("You have no right to delete the spam") if !sub.spam.manager.id == c_u.id
 
       sub.destroy

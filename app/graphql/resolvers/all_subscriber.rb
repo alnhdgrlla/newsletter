@@ -9,7 +9,7 @@ module Resolvers
     def resolve(spam_id:, limit: 10, offset: 0 )
       c_user = context[:current_user]
       return GraphQL::ExecutionError.new("You have to log in") if !c_user
-      # byebug
+
       spam = Spam.find_by(id:spam_id)
       return GraphQL::ExecutionError.new("No spam exits with that ID") if !spam
       
