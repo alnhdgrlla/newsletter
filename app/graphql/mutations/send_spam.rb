@@ -6,7 +6,6 @@ module Mutations
     argument :title, String, required: false
     argument :content, String, required: false
     
-
     type Types::SpamType
 
     def resolve(template_id:nil, spam_id:, spam_name: nil, title:nil, content: nil)
@@ -15,18 +14,15 @@ module Mutations
       return GraphQL::ExecutionError.new("You must log in to create a spam") if !c_u
 
       if !template_id
-
         spam = Spam.find_by(id:spam_id)
         return GraphQL::ExecutionError.new("No spam exists with that ID") if spam.nil?
       
-        return GraphQL::ExecutionError.new("You have no right to send the spam") if !spam.manager.id == c_u.id\
+        return GraphQL::ExecutionError.new("You have no right to send the spam") if !spam.manager.id == c_u.id
 
         spam.subscribers.each do |s|
           send_original(title, spam_name, content, s)
         end
-
       else
-
         temp = Template.find_by(id:template_id) 
         return GraphQL::ExecutionError.new("No template exists with that ID") if temp.nil?
 
@@ -35,12 +31,10 @@ module Mutations
 
         return GraphQL::ExecutionError.new("You have no right to send the spam") if !spam.manager.id == c_u.id
 
-
         spam.subscribers.each do |s|
           send_spam(temp, spam.name, s)
         end
       end
-      
       spam
     end
 
