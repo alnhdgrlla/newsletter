@@ -5,5 +5,6 @@ module Types
     field :all_subscriber, resolver: Resolvers::AllSubscriber
     field :single_spam, resolver: Resolvers::SingleSpam
     field :single_subscriber, resolver: Resolvers::SingleSubscriber
+    field :single_template, resolver: Resolvers::SingleTemplate
   end
 end
