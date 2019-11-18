@@ -1,5 +1,5 @@
 class Spam < ApplicationRecord
   belongs_to :manager
-  has_many :templates
-  has_many :subscribers
+  has_many :templates, dependent: :destroy
+  has_many :subscribers, dependent: :destroy
 end

@@ -14,7 +14,7 @@ module Resolvers
       sub = Subscriber.find_by(id: sub_id)
       return GraphQL::ExecutionError.new("There is not subscriber with that ID") if !sub
       
-      return GraphQL::ExecutionError.new("You do not have the right to see this subscriber") if !c_user.id = sub.spam.manager_id
+      return GraphQL::ExecutionError.new("You do not have the right to see this subscriber") if !c_user.id == sub.spam.manager_id
       
       sub 
     end

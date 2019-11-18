@@ -13,7 +13,7 @@ module Mutations
 
       return GraphQL::ExecutionError.new("You have no right to delete the spam") if !spam.manager.id == c_u.id
 
-      spam.destory
+      spam.destroy
     end
   end
 end

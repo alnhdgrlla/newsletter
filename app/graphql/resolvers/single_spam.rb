@@ -13,7 +13,7 @@ module Resolvers
       spam = Spam.find_by(id: spam_id)
       return GraphQL::ExecutionError.new("There is not spam with that ID") if !spam
       
-      return GraphQL::ExecutionError.new("You do not have the right to see this spam") if !c_user.id = spam.manager_id
+      return GraphQL::ExecutionError.new("You do not have the right to see this spam") if !c_user.id == spam.manager_id
       
       spam
     end

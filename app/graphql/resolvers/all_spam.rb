@@ -1,6 +1,5 @@
 module Resolvers
   class AllSpam < Resolvers::Base
-    argument :manager_id, ID, required: true
     argument :limit, Integer, required: false
     argument :offset, Integer, required: false
 
